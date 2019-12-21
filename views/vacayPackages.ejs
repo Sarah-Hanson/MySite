@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="author" content="Sarah Hanson">
+	<% include ./partials/bootStrapScripts.ejs %> 
+	<% include ./partials/commonHeaderContent.ejs %> 
+  </head>
+  <body>
+  	<% include ./partials/navBar.ejs %> 
+	
+	<div class="jumbotron jumbo-bg fill pt-50">
+	<!-- 4 panel feature packages -->
+	<div class="jumbotron text-center md-10 light see-through">
+		<h1 class="display-4 font-weight-bold mt-0 pt-0"> Feature Destinations </h2>
+			<!-- EJS Script to create the 4 panel feature package section -->
+			<% 
+				pkgList.sort(function(a,b) {return b.PkgAgencyCommission-a.PkgAgencyCommission});
+				var featureImgs = '';
+				var i = 0;				
+				i=0;
+				for( i; i<4; i++) {
+					featureImgs += "<div class=\"col-xl-3 col-md-6 col-xs-10\"> <div class=\"hovereffect\">"
+					+ "<a href=\"/pickapackage/?pkgID="
+					+ pkgList[i].PackageId + "\"> <img class=\"img-responsive rounded img-fluid\" src="
+					+ pkgList[i].imgsrc
+					+ " alt=\"\"> <div class=\"overlay\"> <h2>" + pkgList[i].PkgDesc 
+					+ "</h2> </div></a></div></div>";
+				}
+			%>
+			
+			<div class="row no-gutters salad">
+			<%- featureImgs %>
+			</div>
+		</dv>
+	</div>
+	<!-- additional packages -->
+	<div class="jumbotron text-center md-10 mt-0 p-auto pt-0 light see-through">
+		<h2 class="display-4 salad"> Additonal Packages </h2>
+		<hr class="col-xs-12">
+		<div class="row salad">
+		<!-- EJS Script to create the bottom area of all the other packages in the DB -->
+		<% 
+			var xtraPkg = "";
+				for (i; i<pkgList.length; i++) {
+					xtraPkg += "<a class=\"col-md-4 text-dark\" href=\"/pickapackage/?pkgID="
+					+ pkgList[i].PackageId
+					+ "\">"
+					+ pkgList[i].PkgName + "</a>";
+			}
+		%>
+		<%- xtraPkg %>
+		</div>
+	</div>
+
+
+  </body>
+</html>

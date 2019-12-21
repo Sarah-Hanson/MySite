@@ -1,0 +1,54 @@
+<!--
+    Creators and contributors - Hamish, Sarah and Wade
+
+-->
+
+<script type="text/javascript">
+ $(function () {
+	if(<%= loggedstat %>) {
+		document.getElementById("show").style.display = "none";
+		document.getElementById("passhide").style.display = "none";
+		document.getElementById("emailhide").style.display = "none";
+		document.getElementById("hide").style.display = "block";
+	} else {
+		document.getElementById("show").style.display = "block";
+		document.getElementById("passhide").style.display = "block";
+		document.getElementById("emailhide").style.display = "block";
+		document.getElementById("hide").style.display = "none";
+	}
+});
+</script>
+
+<style>
+#hide {
+	display: none;
+}
+</style>
+
+<nav class="navbar navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/index">Travel Experts <%= (name) %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+				<form class="form-inline mt-2 mt-md-0" action="/login_form" method="post">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Email" aria-label="Email"
+                        name="CustEmail" id="emailhide">
+                    <input class="form-control mr-sm-2" type="password" placeholder="Password"
+                        aria-label="Password" name="CustPassword" id="passhide">
+                    <button class="btn btn-outline-success my-2 my-sm-0 show" type="submit" id="show">Login</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 hide" type="submit" formaction="/logout_form" id="hide">Logout</button>
+				</form>
+            </li><br />
+            <li class="nav-item"> <a class="nav-link" href="/index">Travel Experts Home</a>
+            <li class="nav-item"> <a class="nav-link" href="/ContactUs">Contact Us</a>
+            <li class="nav-item"> <a class="nav-link" href="/vacation">Vacation Packages</a>
+            <li class="nav-item"> <a class="nav-link" href="/registration">Client Registration</a>	
+            </li>
+        </ul>
+			
+    </div>
+</nav>
