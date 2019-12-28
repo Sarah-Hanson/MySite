@@ -1,8 +1,8 @@
 /* Created by Sarah Hanson, Contributors Wade and Hamish */
 /* 	I used this tag to make a splash background across the entire back page,
 	note that the img is hardcoded so copy and make your own as needed */
-.jumbo-bg{
-	background-image: url('sunrise3.jpg');
+.index-bg{
+	background-image: url('woodBG.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
