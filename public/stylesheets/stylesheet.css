@@ -27,7 +27,7 @@
 
 /* adds some padding to the top of the object so it sticks out past the header bar */
 .padder-top{
-	padding-top: 50px;
+	padding-top: 100px;
 }
 
 /* 	same as top padder but it appies to the bottom of the object and works
