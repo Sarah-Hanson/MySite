@@ -1,2 +1,2 @@
 # selfSite
-My website
+Ongoing project folder for a portfolio website
